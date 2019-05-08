@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Product">
+	<insert id="insert" parameterType="Product">
+		insert into
+		product(product_id,subcategory_id,product_name,price,detail,filename)
+		values(seq_product.nextval,#{subcategory.subcategory_id},#{product_name},#{price},#{detail},#{filename})
+	</insert>
+
+	<resultMap type="Product" id="productSubcategory">
+		<id column="product_id" property="product_id" />
+		<result column="product_name" property="product_name" />
+		<result column="price" property="price" />
+		<result column="detail" property="detail" />
+		<result column="filename" property="filename" />
+		<association column="subcategory_id"
+			property="subcategory" javaType="Subcategory"
+			select="Subcategory.select" />
+	</resultMap>
+
+	<!-- 모든 상품 정보 가져오기 서브카테고리까지 포함.. -->
+	<select id="selectAll" resultMap="productSubcategory">
+		select * from product
+	</select>
+
+	<select id="selectAllByFkey" resultMap="productSubcategory"
+		parameterType="int">
+		select * from product where
+		subcategory_id=#{subcategory_id}
+	</select>
+
+	<select id="select" parameterType="int"
+		resultMap="productSubcategory">
+		select * from product where product_id=#{product_id}
+	</select>
+
+</mapper>
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Member">
+	<!-- mybatis에서의 mapping이란 결국 자바 객체와 SQL간의
+			mapping을 의미한다. 즉 이 행위를 개발자 대신 해주는
+			프레임웍인 것이다.. -->
+	<insert id="insert" parameterType="Member">
+		insert into member(id, password, name) 
+		values(#{id}, #{password}, #{name})
+	</insert>
+	<select id="select" parameterType="int" resultType="Member">
+		select * from member where member_id=#{member_id}
+	</select>
+	<!-- 레코드 수가 2개 이상일 경우에는 자동으로 List를 생성하여 레코드를 List에 넣어준다 -->
+	<select id="selectAll" resultType="Member">
+		select * from member order by member_id asc
+	</select>
+	<update id="update" parameterType="Member">
+		update member set id=#{id}, password=#{password},
+		name=#{name} where member_id=#{member_id}
+	</update>
+	<delete id="delete" parameterType="int">
+		delete member where member_id=#{member_id}
+	</delete>
+</mapper>

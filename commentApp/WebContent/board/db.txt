@@ -1,0 +1,24 @@
+create table board(
+	board_id number primary key,
+	writer varchar(20),
+	title varchar2(100),
+	content clob,
+	regdate date default sysdate,
+	hit number default 0
+);
+
+create table comments(
+	comments_id number primary key,
+	board_id number,
+	cwriter varchar2(20),
+	msg varchar2(200),
+	cregdate date default sysdate
+);
+
+create sequence seq_board
+increment by 1
+start with 1;
+
+create sequence seq_comments
+increment by 1
+start with 1;

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function loadDoc() {
+		//ajax의 핵심 객체(비동기 통신을 처리)
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				document.getElementById("demo").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "ajax_server.jsp", true);
+		xhttp.send();
+	}
+</script>
+</head>
+<body>
+<button onClick="loadDoc()">괴물 등장 버튼</button>
+아래의 칸에 괴물 등장
+	<h1 id="demo"></h1>
+</body>
+</html>

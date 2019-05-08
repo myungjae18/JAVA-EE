@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="javax.sql.DataSource"/>
+<fullyQualifiedTypeName name="javax.naming.InitialContext"/>
+<fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
+<fullyQualifiedTypeName name="com.itbank.comments.model.Comments"/>
+<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+<fullyQualifiedTypeName name="com.itbank.comments.model.CommentsDAO"/>
+<fullyQualifiedTypeName name="com.itbank.reboard.domain.ReBoard"/>
+<fullyQualifiedTypeName name="com.itbank.db.pool.PoolManager"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="com.itbank.db.pool.MybatisManager"/>
+<fullyQualifiedTypeName name="com.itbank.db.pool.MybatisMariadbManager"/>
+<fullyQualifiedTypeName name="com.itbank.model.repository.MemberDAO"/>
+<fullyQualifiedTypeName name="com.itbank.model.domain.Member"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactory"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="sun.reflect.ReflectionFactory.GetReflectionFactoryAction"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.io.Resources"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactoryBuilder"/>
+<fullyQualifiedTypeName name="com.fashion.model.domain.Admin"/>
+<fullyQualifiedTypeName name="com.fashion.model.domain.TopCategory"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="test.Dept"/>
+<fullyQualifiedTypeName name="com.fashion.model.domain.SubCategory"/>
+<fullyQualifiedTypeName name="java.text.NumberFormat"/>
+<fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+<fullyQualifiedTypeName name="com.fashion.common.DuplicatedException"/>
+<fullyQualifiedTypeName name="com.fashion.model.domain.Cart"/>
+<fullyQualifiedTypeName name="com.fashion.model.domain.Customer"/>
+<fullyQualifiedTypeName name="com.fashion.model.domain.Paymethod"/>
+<fullyQualifiedTypeName name="com.fashion.mybatis.config.ConfigManager"/>
+<fullyQualifiedTypeName name="com.fashion.model.domain.OrderDetail"/>
+<fullyQualifiedTypeName name="com.fashion.model.domain.Product"/>
+<fullyQualifiedTypeName name="com.fashion.model.domain.OrderSummary"/>
+<fullyQualifiedTypeName name="java.sql.DriverManager"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
+</qualifiedTypeNameHistroy>

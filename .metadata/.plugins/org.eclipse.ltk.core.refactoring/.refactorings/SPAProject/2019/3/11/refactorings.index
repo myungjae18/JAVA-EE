@@ -1,0 +1,16 @@
+1552264948359	Delete element
+1552265072834	Delete element
+1552266356338	Move 'log4j-1.2.17.jar' to 'lib'
+1552270857019	Delete element
+1552270866313	Rename resource 'text.jsp'
+1552278154138	Delete element
+1552354936017	Rename package 'mybatis.mapper'
+1552355015875	Copy package
+1552355142924	Rename resource 'mysql-config.xml'
+1552355392971	Rename type 'MybatisManager'
+1552357864188	Rename type 'MybatisMemberDAO'
+1552363784935	Rename type 'MemberDAO'
+1552449651029	Copy file
+1552449849899	Copy file
+1552450007667	Copy file
+1552453012611	Copy file

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.itbank.db.pool&apos; to &apos;SPAProject/src&apos;&#x0D;&#x0A;- Original project: &apos;BoardApp&apos;&#x0D;&#x0A;- Destination element: &apos;SPAProject/src&apos;&#x0D;&#x0A;- Original element: &apos;BoardApp/src/com.itbank.db.pool&apos;" description="Copy package" destination="=SPAProject/src" element1="/src&lt;com.itbank.db.pool" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1552270861027" version="1.0"/>
+</session>

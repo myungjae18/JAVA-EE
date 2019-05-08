@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Cart">
+	<!-- Cart.java에는 has a 관계로 Customer, Product가 있기 때문에 자동 매핑이 불가능해 association 
+		처리가 필요하다 -->
+	<resultMap type="Cart" id="cartmap">
+		<id column="cart_id" property="cart_id" />
+		<result column="ea" property="ea" />
+		<association column="product_id" property="product"
+			javaType="Product" select="Product.select" />
+		<association column="customer_id" property="customer"
+			javaType="Customer" select="Customer.select" />
+	</resultMap>
+
+	<!-- 장바구니 중복 확인 -->
+	<select id="selectByProductId" parameterType="Cart"
+		resultMap="cartmap">
+		select * from cart where product_id=#{product.product_id}
+		and customer_id=#{customer.customer_id}
+	</select>
+
+	<!-- 장바구니에 상품 1건 등록 -->
+	<insert id="insert" parameterType="Cart">
+		insert into cart(cart_id, ea,
+		product_id, customer_id)
+		values(seq_cart.nextval, #{ea},
+		#{product.product_id}, #{customer.customer_id})
+	</insert>
+
+	<!-- 회원의 장바구니 가져오기 -->
+	<select id="selectByCustomer" parameterType="int"
+		resultMap="cartmap">
+		select * from cart
+		where customer_id=#{customer_id}
+	</select>
+
+	<delete id="delete" parameterType="int">
+		delete from cart where
+		cart_id=#{cart_id}
+	</delete>
+
+	<!-- 갯수 업데이트 -->
+	<update id="updateCart" parameterType="int">
+		update cart set ea=ea+1
+		where cart_id=#{cart_id}
+	</update>
+
+	<!-- 해당 상품의 갯수 변경 -->
+	<update id="updateEa" parameterType="Cart">
+		update cart set ea=#{ea}
+		where customer_id=#{customer.customer_id}
+		and
+		product_id=#{product.product_id}
+	</update>
+</mapper>
+
+
+
+
+
+
+
+

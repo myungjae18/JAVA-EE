@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="OrderSummary">
+	<insert id="insert" parameterType="OrderSummary">
+		insert into order_summary(order_summary_id,
+		customer_id, total_buy,
+		total_pay, paymethod_id)
+		values(seq_order_summary.nextval,
+		#{customer.customer_id},
+		#{total_buy}, #{total_pay},
+		#{paymethod.paymethod_id})
+		<selectKey order="AFTER" resultType="int"
+			keyProperty="order_summary_id">
+			select seq_order_summary.currval from dual
+		</selectKey>
+	</insert>
+
+	<!-- 주문 요약 정보 가져오기 -->
+	<resultMap type="OrderSummary" id="summaryMap">
+		<id column="order_summary_id" property="order_summary_id" />
+		<result column="total_buy" property="total_buy" />
+		<result column="total_pay" property="total_pay" />
+		<result column="order_date" property="order_date" />
+		<association column="customer_id" property="customer"
+			javaType="Customer" select="Customer.select" />
+		<association column="paymethod_id" property="paymethod"
+			javaType="Paymethod" select="Paymethod.select" />
+	</resultMap>
+
+	<select id="selectAll" resultMap="summaryMap">
+		select * from order_summary
+		order by order_summary_id desc
+	</select>
+
+	<select id="select" parameterType="int" resultMap="summaryMap">
+		select * from
+		order_summary where
+		order_summary_id=#{order_summary_id}
+	</select>
+</mapper>

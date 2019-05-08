@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Dept">
+	<!--
+		Mybatis는 자체적으로 자동 매핑을 해주지만, 때에 따라서는 
+		개발자가 매핑을 직접 처리할 수도 있다... 
+		ex) 컬럼명과 DTO 간 명칭이 틀린경우 
+		      조인을 하고자 할때..
+		resultMap : 개발자가 직접 매핑하고자하는 태그 id를 기재		       	
+	-->
+	<resultMap type="Dept" id="myMap">
+		<id 		column="deptno" 			property="deptno"/>
+		<result 	column="dname" 	property="dname"/>		
+		<result 	column="location" 	property="loc"/>		
+	</resultMap>
+
+	<select id="select" resultType="Dept" parameterType="int">
+		select * from dept where deptno=#{deptno}
+	</select>
+	
+	<select id="selectAll" resultMap="myMap">
+		select deptno, dname,loc as location from dept
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

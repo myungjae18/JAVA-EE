@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script>
+var arr=["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg"];
+/*정교한 디자인이 힘들고, 모든 컨텐츠를 document.write로 출력해야 한다
+for(var i=0;i<arr.length;i++){
+	document.write("<img src=\"./asset/images/geo/"+arr[i]+"\"/>");
+}*/
+
+function init(){
+	for(var i=0;i<=arr.length;i++){
+		var img=document.createElement("img");
+		img.src="./asset/images/geo/"+arr[i];	
+		//생성된 이미지 객체를 div에 부착
+		var container=document.getElementById("container");
+		container.appendChild(img);
+	}
+}
+
+addEventListener("load", function(){
+	init();
+});
+</script>
+</head>
+<body>
+<div id="container">
+	<img/>
+</div>
+</body>
+</html>
